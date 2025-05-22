@@ -1,0 +1,251 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel='stylesheet' type='text/css' media='screen'
+            href="{% static 'css/bootstrap.min.css' %}">
+
+    <script src= "{% static 'Script/jquery-3.2.1.slim.min.js' %}"></script>
+
+    <script src= "{% static 'Script/popper.min.js' %}"></script>
+
+    <script src= "{% static 'Script/bootstrap.min.js' %}"></script>
+
+    <style>
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        h1{
+            color: rgb(0, 0, 0);
+        }
+        h1:hover{
+            color: aqua;
+        }
+        table, th, td {
+            border:1px solid black;
+        }
+        th{
+            background-color: aqua;
+            padding: 5px;
+            
+        }
+    </style>
+</head>
+<body>
+
+
+    <h1>Use list Customer Id</h1>
+    <table>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Date</th>
+        </tr>        
+        <tr>
+          <td>{{DTOCustomerByIDs.id}}</td>
+          <td>{{DTOCustomerByIDs.name}}</td>
+          <td>{{DTOCustomerByIDs.phone}} </td>
+          <td>{{DTOCustomerByIDs.email}} </td>
+          <td>{{DTOCustomerByIDs.date_created}} </td>
+        </tr>
+    </table>
+    <br>
+
+
+    <h1>Use Filter</h1>
+    <table>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Date</th>
+        </tr>
+        {% for UseFilter in UseFilters %}
+        <tr>
+          <td>{{UseFilter.id}}</td>
+          <td>{{UseFilter.name}}</td>
+          <td>{{UseFilter.phone}} </td>
+          <td>{{UseFilter.email}} </td>
+          <td>{{UseFilter.date_created}} </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+
+
+    <h1>Use Get</h1>
+    <table>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Date</th>
+        </tr>
+        <tr>
+          <td>{{UseGets.id}}</td>
+          <td>{{UseGets.name}}</td>
+          <td>{{UseGets.phone}} </td>
+          <td>{{UseGets.email}} </td>
+          <td>{{UseGets.date_created}} </td>
+        </tr>
+    </table>
+    <br>
+
+    <h1>Use Exists</h1>
+    
+    <table>
+        <tr>
+            <th>Exist</th>
+        </tr>
+        <tr>
+            <td>{{UseExistss}}</td>
+        </tr>
+    </table>
+
+
+    <h1>Use Count</h1>
+    <table>
+        <tr>
+            <th>Count</th>
+        </tr>
+        <tr>
+            <td>{{UseCounts}}</td>
+        </tr>
+    </table>
+
+    <h1>Use Last</h1>
+    <table>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Date</th>
+        </tr>
+        <tr>
+          <td>{{UseLasts.id}}</td>
+          <td>{{UseLasts.name}}</td>
+          <td>{{UseLasts.phone}} </td>
+          <td>{{UseLasts.email}} </td>
+          <td>{{UseLasts.date_created}} </td>
+        </tr>
+    </table>
+    <br>
+
+    <h1>Use First</h1>
+    <table>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Date</th>
+        </tr>
+        <tr>
+          <td>{{UseFirsts.id}}</td>
+          <td>{{UseFirsts.name}}</td>
+          <td>{{UseFirsts.phone}} </td>
+          <td>{{UseFirsts.email}} </td>
+          <td>{{UseFirsts.date_created}} </td>
+        </tr>
+    </table>
+    <br>
+
+
+    <h1>Use Order By desc</h1>
+    <table>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Date</th>
+        </tr>
+        {% for UseOrderByDesc in UseOrderByDescs %}
+        <tr>
+          <td>{{UseOrderByDesc.id}}</td>
+          <td>{{UseOrderByDesc.name}}</td>
+          <td>{{UseOrderByDesc.phone}} </td>
+          <td>{{UseOrderByDesc.email}} </td>
+          <td>{{UseOrderByDesc.date_created}} </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+
+
+    <h1>Use Order By</h1>
+    <table>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Date</th>
+        </tr>
+        {% for UseOrderBy in UseOrderBys %}
+        <tr>
+          <td>{{UseOrderBy.id}}</td>
+          <td>{{UseOrderBy.name}}</td>
+          <td>{{UseOrderBy.phone}} </td>
+          <td>{{UseOrderBy.email}} </td>
+          <td>{{UseOrderBy.date_created}} </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+
+
+    <h1>Use Exclude</h1>
+    <table>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Date</th>
+        </tr>
+        {% for UseExclude in UseExcludes %}
+        <tr>
+          <td>{{UseExclude.id}}</td>
+          <td>{{UseExclude.name}}</td>
+          <td>{{UseExclude.phone}} </td>
+          <td>{{UseExclude.email}} </td>
+          <td>{{UseExclude.date_created}} </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+
+    <h1 >List Customer</h1>
+    <table">
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Date</th>
+        </tr>
+        {% for DTOCustomer in DTOCustomers %}
+        <tr>
+          <td>{{DTOCustomer.id}}</td>
+          <td>{{DTOCustomer.name}}</td>
+          <td>{{DTOCustomer.phone}} </td>
+          <td>{{DTOCustomer.email}} </td>
+          <td>{{DTOCustomer.date_created}} </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+
+</body>
+</html>

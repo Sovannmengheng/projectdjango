@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Detail</title>
+    {% include 'accounts/head.html' %}
+</head>
+<body>
+
+    <div class="container">
+
+        {% include 'accounts/banner.html'%}
+    
+        {% include 'accounts/menu.html'%}
+    
+        {% include 'accounts/SlideShow.html'%}
+    
+        <div class="row">
+    
+          {% include 'accounts/sidebarright.html' %}
+    
+          <div class="col-lg-8">
+            {% for DTOMenuDetail in DTOMenuDetails %}    
+                {{ DTOMenuDetail.Description|safe}}
+                <hr>
+            {% endfor %}
+          </div>
+    
+          {% include 'accounts/sidebarleft.html' %}
+    
+        </div>
+    
+        {% include 'accounts/Footer.html' %}
+    
+    </div>
+
+
+    
+</body>
+</html>

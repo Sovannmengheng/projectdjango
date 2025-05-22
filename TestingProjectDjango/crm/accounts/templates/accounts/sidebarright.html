@@ -1,0 +1,8 @@
+{% load static %}
+
+<div class="col-lg-2">
+    
+    {% for DTOSIdebarRight in DTOSIdebarRights %}
+        <img src="{% static DTOSIdebarRight.ImageURL %}" width="100%"><br><br>
+    {% endfor %}
+</div>
